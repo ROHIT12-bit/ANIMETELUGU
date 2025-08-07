@@ -12,6 +12,7 @@ RUN sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list && \
 RUN apt-get install -y \
     git wget pv jq python3-dev mediainfo gcc libsm6 libxext6 libfontconfig1 libxrender1 libgl1-mesa-glx
 
+RUN pip install lxml_html_clean
 RUN pip install "lxml[html_clean]"
 
 COPY --from=mwader/static-ffmpeg:6.1 /ffmpeg /bin/ffmpeg
